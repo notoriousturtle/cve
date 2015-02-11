@@ -1,0 +1,902 @@
+[
+    {
+        "Status": "Candidate",
+        "Votes": "   MODIFY(1) Frech  |     NOOP(2) Northcutt, Wall  |     REVIEWING(1) Christey",
+        "Name": "CVE-1999-0001",
+        "Comments": " Christey> A Bugtraq posting indicates that the bug has to do with  |     \"short packets with certain options set,\" so the description  |     should be modified accordingly.  |       |     But is this the same as CVE-1999-0052?  That one is related  |     to nestea (CVE-1999-0257) and probably the one described in  |     BUGTRAQ:19981023 nestea v2 against freebsd 3.0-Release  |     The patch for nestea is in ip_input.c around line 750.  |     The patches for CVE-1999-0001 are in lines 388&446.  So,   |     CVE-1999-0001 is different from CVE-1999-0257 and CVE-1999-0052.  |     The FreeBSD patch for CVE-1999-0052 is in line 750.  |     So, CVE-1999-0257 and CVE-1999-0052 may be the same, though  |     CVE-1999-0052 should be RECAST since this bug affects Linux  |     and other OSes besides FreeBSD.  |   Frech> XF:teardrop(338)  |     This assignment was based solely on references to the CERT advisory.  |   Christey> The description for BID:190, which links to CVE-1999-0052 (a  |     FreeBSD advisory), notes that the patches provided by FreeBSD in  |     CERT:CA-1998-13 suggest a connection between CVE-1999-0001 and  |     CVE-1999-0052.  CERT:CA-1998-13 is too vague to be sure without  |     further analysis.",
+        "References": "CERT:CA-98-13-tcp-denial-of-service   |   BUGTRAQ:19981223 Re: CERT Advisory CA-98.13 - TCP/IP Denial of Service   |   CONFIRM:http://www.openbsd.org/errata23.html#tcpfix   |   OSVDB:5707   |   URL:http://www.osvdb.org/5707",
+        "Phase": "Modified (20051217)",
+        "Description": "ip_input.c in BSD-derived TCP/IP implementations allows remote attackers to cause a denial of service (crash or hang) via crafted packets."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0002",
+        "Comments": "",
+        "References": "SGI:19981006-01-I   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19981006-01-I   |   CERT:CA-98.12.mountd   |   CIAC:J-006   |   URL:http://www.ciac.org/ciac/bulletins/j-006.shtml   |   BID:121   |   URL:http://www.securityfocus.com/bid/121   |   XF:linux-mountd-bo",
+        "Phase": "",
+        "Description": "Buffer overflow in NFS mountd gives root access to remote attackers, mostly in Linux systems."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0003",
+        "Comments": "",
+        "References": "NAI:NAI-29   |   CERT:CA-98.11.tooltalk   |   SGI:19981101-01-A   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19981101-01-A   |   SGI:19981101-01-PX   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19981101-01-PX   |   XF:aix-ttdbserver   |   XF:tooltalk   |   BID:122   |   URL:http://www.securityfocus.com/bid/122",
+        "Phase": "",
+        "Description": "Execute commands as root via buffer overflow in Tooltalk database server (rpc.ttdbserverd)."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(8) Baker, Cole, Collins, Dik, Landfield, Magdych, Northcutt, Wall  |     MODIFY(1) Frech  |     NOOP(1) Christey  |     REVIEWING(1) Shostack",
+        "Name": "CVE-1999-0004",
+        "Comments": " Frech> Extremely minor, but I believe e-mail is the correct term. (If you reject  |     this suggestion, I will not be devastated.) :-)  |   Christey> This issue seems to have been rediscovered in  |     BUGTRAQ:20000515 Eudora Pro & Outlook Overflow - too long filenames again  |     http://marc.theaimsgroup.com/?l=bugtraq&m=95842482413076&w=2  |       |     Also see  |     BUGTRAQ:19990320 Eudora Attachment Buffer Overflow  |     http://marc.theaimsgroup.com/?l=bugtraq&m=92195396912110&w=2  |   Christey>   |     CVE-2000-0415 may be a later rediscovery of this problem  |     for Outlook.  |   Dik> Sun bug 4163471,  |   Christey> ADDREF BID:125  |   Christey> BUGTRAQ:19980730 Long Filenames & Lotus Products  |     URL:http://marc.theaimsgroup.com/?l=bugtraq&m=90221104526201&w=2",
+        "References": "CERT:CA-98.10.mime_buffer_overflows   |   XF:outlook-long-name   |   SUN:00175   |   MS:MS98-008   |   URL:http://www.microsoft.com/technet/security/bulletin/ms98-008.asp",
+        "Phase": "Modified (19990621-01)",
+        "Description": "MIME buffer overflow in email clients, e.g. Solaris mailtool and Outlook."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0005",
+        "Comments": "",
+        "References": "CERT:CA-98.09.imapd   |   SUN:00177   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/177   |   BID:130   |   URL:http://www.securityfocus.com/bid/130   |   XF:imap-authenticate-bo",
+        "Phase": "",
+        "Description": "Arbitrary command execution via IMAP buffer overflow in authenticate command."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0006",
+        "Comments": "",
+        "References": "CERT:CA-98.08.qpopper_vul   |   SGI:19980801-01-I   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19980801-01-I   |   AUSCERT:AA-98.01   |   XF:qpopper-pass-overflow   |   BID:133   |   URL:http://www.securityfocus.com/bid/133",
+        "Phase": "",
+        "Description": "Buffer overflow in POP servers based on BSD/Qualcomm's qpopper allows remote attackers to gain root access using a long PASS command."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0007",
+        "Comments": "",
+        "References": "CERT:CA-98.07.PKCS   |   MS:MS98-002   |   URL:http://www.microsoft.com/technet/security/bulletin/ms98-002.mspx   |   XF:nt-ssl-fix",
+        "Phase": "",
+        "Description": "Information from SSL-encrypted sessions via PKCS #1."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0008",
+        "Comments": "",
+        "References": "CERT:CA-98.06.nisd   |   SUN:00170   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/170   |   ISS:June10,1998   |   XF:nisd-bo-check",
+        "Phase": "",
+        "Description": "Buffer overflow in NIS+, in Sun's rpc.nisd program."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0009",
+        "Comments": "",
+        "References": "SGI:19980603-01-PX   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19980603-01-PX   |   HP:HPSBUX9808-083   |   URL:http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX9808-083   |   SUN:00180   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/180   |   CERT:CA-98.05.bind_problems   |   XF:bind-bo   |   BID:134   |   URL:http://www.securityfocus.com/bid/134",
+        "Phase": "",
+        "Description": "Inverse query buffer overflow in BIND 4.9 and BIND 8 Releases."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0010",
+        "Comments": "",
+        "References": "CERT:CA-98.05.bind_problems   |   SGI:19980603-01-PX   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19980603-01-PX   |   HP:HPSBUX9808-083   |   URL:http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX9808-083   |   XF:bind-dos",
+        "Phase": "",
+        "Description": "Denial of Service vulnerability in BIND 8 Releases via maliciously formatted DNS messages."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0011",
+        "Comments": "",
+        "References": "CERT:CA-98.05.bind_problems   |   SGI:19980603-01-PX   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19980603-01-PX   |   HP:HPSBUX9808-083   |   URL:http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX9808-083   |   SUN:00180   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/180   |   XF:bind-axfr-dos",
+        "Phase": "",
+        "Description": "Denial of Service vulnerabilities in BIND 4.9 and BIND 8 Releases via CNAME record and zone transfer."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0012",
+        "Comments": "",
+        "References": "CERT:CA-98.04.Win32.WebServers   |   XF:nt-web8.3",
+        "Phase": "",
+        "Description": "Some web servers under Microsoft Windows allow remote attackers to bypass access restrictions for files with long file names."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0013",
+        "Comments": "",
+        "References": "CERT:CA-98.03.ssh-agent   |   NAI:NAI-24   |   XF:ssh-agent",
+        "Phase": "",
+        "Description": "Stolen credentials from SSH clients via ssh-agent program, allowing other local users to access remote accounts belonging to the ssh-agent user."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0014",
+        "Comments": "",
+        "References": "HP:HPSBUX9801-075   |   URL:http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX9801-075   |   SUN:00185   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/185   |   CERT:CA-98.02.CDE",
+        "Phase": "",
+        "Description": "Unauthorized privileged access or denial of service via dtappgather program in CDE."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(1) Wall  |     MODIFY(1) Frech  |     REVIEWING(1) Christey",
+        "Name": "CVE-1999-0015",
+        "Comments": " Frech> XF: teardrop-mod  |   Christey> Not sure how many separate \"instances\" of Teardrop there are.  |     See: CVE-1999-0015, CVE-1999-0104, CVE-1999-0257, CVE-1999-0258  |   Christey> See the SCO advisory at:  |     http://www.securityfocus.com/templates/advisory.html?id=1411  |     which may further clarify the issue.  |   Christey> MSKB:Q154174  |     MSKB:Q154174 (CVE-1999-0015) and MSKB:Q179129 (CVE-1999-0104)  |     indicate that CVE-1999-0015 was fixed in NT SP3, but  |     CVE-1999-0104 was not.  Thus CD:SF-LOC suggests that the  |     problems keep separate candidates because one problem appears  |     in a different version than the other.  |   Christey> BID:124  |     http://www.securityfocus.com/bid/124  |     Consider MSKB:Q154174  |     http://support.microsoft.com/support/kb/articles/q154/1/74.asp  |     Consider BUGTRAQ:19971113 Linux IP fragment overlap bug  |     http://www.securityfocus.com/archive/1/8014",
+        "References": "CERT:CA-97.28.Teardrop_Land   |   OVAL:oval:org.mitre.oval:def:5579   |   URL:http://oval.mitre.org/repository/data/getDef?id=oval:org.mitre.oval:def:5579   |   XF:teardrop",
+        "Phase": "Modified (20090302)",
+        "Description": "Teardrop IP denial of service."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0016",
+        "Comments": "",
+        "References": "CERT:CA-97.28.Teardrop_Land   |   FREEBSD:FreeBSD-SA-98:01   |   HP:HPSBUX9801-076   |   URL:http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX9801-076   |   CISCO:http://www.cisco.com/warp/public/770/land-pub.shtml   |   XF:cisco-land   |   XF:land   |   XF:95-verv-tcp   |   XF:land-patch   |   XF:ver-tcpip-sys",
+        "Phase": "",
+        "Description": "Land IP denial of service."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0017",
+        "Comments": "",
+        "References": "CERT:CA-97.27.FTP_bounce   |   XF:ftp-bounce   |   XF:ftp-privileged-port",
+        "Phase": "",
+        "Description": "FTP servers can allow an attacker to connect to arbitrary ports on machines other than the FTP client, aka FTP bounce."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0018",
+        "Comments": "",
+        "References": "CERT:CA-97.26.statd   |   AUSCERT:AA-97.29   |   XF:statd   |   BID:127   |   URL:http://www.securityfocus.com/bid/127",
+        "Phase": "",
+        "Description": "Buffer overflow in statd allows root privileges."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0019",
+        "Comments": "",
+        "References": "CERT:CA-96.09.rpc.statd   |   XF:rpc-stat   |   SUN:00135   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/135",
+        "Phase": "",
+        "Description": "Delete or create a file via rpc.statd, due to invalid information."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   MODIFY(1) Frech  |     NOOP(4) Levy, Northcutt, Shostack, Wall  |     REJECT(2) Baker, Christey",
+        "Name": "CVE-1999-0020",
+        "Comments": " Frech> XF:lpr-bo  |   Christey> DUPE CVE-1999-0032, which includes XF:lpr-bo",
+        "References": "",
+        "Phase": "Modified (20050204)",
+        "Description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: CVE-1999-0032.  Reason: This candidate is a duplicate of CVE-1999-0032.  Notes: All CVE users should reference CVE-1999-0032 instead of this candidate.  All references and descriptions in this candidate have been removed to prevent accidental usage."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0021",
+        "Comments": "",
+        "References": "BUGTRAQ:19971010 Security flaw in Count.cgi (wwwcount)   |   CERT:CA-97.24.Count_cgi   |   XF:http-cgi-count   |   BID:128   |   URL:http://www.securityfocus.com/bid/128",
+        "Phase": "",
+        "Description": "Arbitrary command execution via buffer overflow in Count.cgi (wwwcount) cgi-bin program."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0022",
+        "Comments": "",
+        "References": "CERT:CA-97.23.rdist   |   SUN:00179   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/179   |   XF:rdist-bo3   |   XF:rdist-sept97",
+        "Phase": "",
+        "Description": "Local user gains root privileges via buffer overflow in rdist, via expstr() function."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0023",
+        "Comments": "",
+        "References": "CERT:CA-96.14.rdist_vul   |   XF:rdist-bo   |   XF:rdist-bo2",
+        "Phase": "",
+        "Description": "Local user gains root privileges via buffer overflow in rdist, via lookup() function."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0024",
+        "Comments": "",
+        "References": "CERT:CA-97.22.bind   |   XF:bind   |   NAI:NAI-11",
+        "Phase": "",
+        "Description": "DNS cache poisoning via BIND, by predictable query IDs."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0025",
+        "Comments": "",
+        "References": "CERT:CA-1997-21   |   URL:http://www.cert.org/advisories/CA-1997-21.html   |   AUSCERT:AA-97.19.IRIX.df.buffer.overflow.vul   |   SGI:SGI:19970505-01-A   |   SGI:SGI:19970505-02-PX   |   CERT-VN:VU#20851   |   URL:http://www.kb.cert.org/vuls/id/20851   |   BID:346   |   URL:http://www.securityfocus.com/bid/346   |   XF:df-bo(440)   |   URL:http://xforce.iss.net/xforce/xfdb/440",
+        "Phase": "",
+        "Description": "root privileges via buffer overflow in df command on SGI IRIX systems."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0026",
+        "Comments": "",
+        "References": "CERT:CA-97.21.sgi_buffer_overflow   |   AUSCERT:AA-97.20.IRIX.pset.buffer.overflow.vul   |   XF:pset-bo",
+        "Phase": "",
+        "Description": "root privileges via buffer overflow in pset command on SGI IRIX systems."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0027",
+        "Comments": "",
+        "References": "CERT:CA-97.21.sgi_buffer_overflow   |   AUSCERT:AA-97.21.IRIX.eject.buffer.overflow.vul   |   XF:eject-bo",
+        "Phase": "",
+        "Description": "root privileges via buffer overflow in eject command on SGI IRIX systems."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0028",
+        "Comments": "",
+        "References": "CERT:CA-97.21.sgi_buffer_overflow   |   AUSCERT:AA-97.22.IRIX.login.scheme.buffer.overflow.vul   |   XF:sgi-schemebo",
+        "Phase": "",
+        "Description": "root privileges via buffer overflow in login/scheme command on SGI IRIX systems."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0029",
+        "Comments": "",
+        "References": "CERT:CA-97.21.sgi_buffer_overflow   |   AUSCERT:AA-97.23-IRIX.ordist.buffer.overflow.vul   |   XF:ordist-bo",
+        "Phase": "",
+        "Description": "root privileges via buffer overflow in ordist command on SGI IRIX systems."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(3) Levy, Ozancin, Prosser  |     NOOP(1) Baker  |     RECAST(1) Frech  |     REJECT(1) Christey",
+        "Name": "CVE-1999-0030",
+        "Comments": " Frech> XF:xlock-bo (also add)  |     As per xlock-bo, also appears on AIX, BSDI, DG/UX, FreeBSD, Solaris, and  |     several Linii.  |     Also, don't you mean to cite SGI:19970502-02-PX? The one you list is  |     login/scheme.  |   Levy> Notice that this xlock overflow is the same as in  |     CA-97.13. CA-97.21 simply is a reminder.  |   Christey> As pointed out by Elias, CA-97.21 states: \"For more  |     information about vulnerabilities in xlock... see CA-97.13\"  |     CA-97.13 = CVE-1999-0038.  |     This may also be a duplicate with CVE-1999-0306.  |       |     See exploits at:  |       |     http://marc.theaimsgroup.com/?l=bugtraq&m=87602167418394&w=2  |     http://marc.theaimsgroup.com/?l=bugtraq&m=87602167418404&w=2  |       |     Sun also has this problem, at  |     http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/150&type=0&nav=sec.sba",
+        "References": "CERT:CA-97.21.sgi_buffer_overflow   |   AUSCERT:AA-97.24.IRIX.xlock.buffer.overflow.vul   |   XF:sgi-xlockbo   |   SGI:19970508-02-PX",
+        "Phase": "Proposed (19990623)",
+        "Description": "root privileges via buffer overflow in xlock command on SGI IRIX systems."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0031",
+        "Comments": "",
+        "References": "CERT:CA-97.20.javascript   |   HP:HPSBUX9707-065   |   URL:http://www.codetalker.com/advisories/vendor/hp/hpsbux9707-065.html",
+        "Phase": "",
+        "Description": "JavaScript in Internet Explorer 3.x and 4.x, and Netscape 2.x, 3.x and 4.x, allows remote attackers to monitor a user's web activities, aka the Bell Labs vulnerability."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0032",
+        "Comments": "",
+        "References": "BUGTRAQ:19960813 Possible bufferoverflow condition in lpr, xterm and xload   |   BUGTRAQ:19961025 Linux & BSD's lpr exploit   |   MLIST:[freebsd-security] 19961025 Vadim Kolontsov: BoS: Linux & BSD's lpr exploit   |   MLIST:[linux-security] 19961122 LSF Update#14: Vulnerability of the lpr program.   |   CERT:CA-97.19.bsdlp   |   AUSCERT:AA-96.12   |   CIAC:H-08   |   CIAC:I-042   |   URL:http://www.ciac.org/ciac/bulletins/i-042.shtml   |   SGI:19980402-01-PX   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19980402-01-PX   |   BID:707   |   URL:http://www.securityfocus.com/bid/707   |   XF:bsd-lprbo2   |   XF:bsd-lprbo   |   XF:lpr-bo",
+        "Phase": "",
+        "Description": "Buffer overflow in lpr, as used in BSD-based systems including Linux, allows local users to execute arbitrary code as root via a long -C (classification) command line option."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(8) Baker, Cole, Collins, Dik, Hill, Northcutt, Shostack, Wall  |     NOOP(1) Christey  |     RECAST(1) Frech",
+        "Name": "CVE-1999-0033",
+        "Comments": " Frech> This vulnerability also manifests itself for the following   |     platforms: AIX, HPUX, IRIX, Solaris, SCO, NCR MP-RAS. In this light,  |     please add the following:  |     Reference: XF:at-bo  |   Dik> Sun bug 1265200, 4063161  |   Christey> ADDREF SGI:19971102-01-PX  |     ftp://patches.sgi.com/support/free/security/advisories/19971102-01-PX  |     SCO:SB.97:01  |     ftp://ftp.sco.com/SSE/security_bulletins/SB.97:01a  |   Christey> CIAC:F-15  |     http://ciac.llnl.gov/ciac/bulletins/f-15.shtml  |     HP:HPSBUX9502-023  |   Christey> Add period to the end of the description.",
+        "References": "CERT:CA-97.18.at   |   SUN:00160   |   XF:sun-atbo",
+        "Phase": "Modified (20040811)",
+        "Description": "Command execution in Sun systems via buffer overflow in the at program."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0034",
+        "Comments": "",
+        "References": "CERT:CA-97.17.sperl   |   XF:perl-suid",
+        "Phase": "",
+        "Description": "Buffer overflow in suidperl (sperl), Perl 4.x and 5.x."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0035",
+        "Comments": "",
+        "References": "XF:ftp-ftpd   |   CERT:CA-97.16.ftpd   |   AUSCERT:AA-97.03",
+        "Phase": "",
+        "Description": "Race condition in signal handling routine in ftpd, allowing read/write arbitrary files."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0036",
+        "Comments": "",
+        "References": "CERT:CA-97.15.sgi_login   |   AUSCERT:AA-97.12   |   CIAC:H-106   |   URL:http://www.ciac.org/ciac/bulletins/h-106.shtml   |   SGI:19970508-02-PX   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19970508-02-PX   |   OSVDB:990   |   URL:http://www.osvdb.org/990   |   XF:sgi-lockout(557)   |   URL:http://xforce.iss.net/xforce/xfdb/557",
+        "Phase": "",
+        "Description": "IRIX login program with a nonzero LOCKOUT parameter allows creation or damage to files."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0037",
+        "Comments": "",
+        "References": "CERT:CA-97.14.metamail   |   XF:metamail-header-commands",
+        "Phase": "",
+        "Description": "Arbitrary command execution via metamail package using message headers, when user processes attacker's message using metamail."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0038",
+        "Comments": "",
+        "References": "CERT:CA-97.13.xlock   |   XF:xlock-bo",
+        "Phase": "",
+        "Description": "Buffer overflow in xlock program allows local users to execute commands as root."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0039",
+        "Comments": "",
+        "References": "BUGTRAQ:19970507 Re: SGI Security Advisory 19970501-01-A - Vulnerability in   |   BUGTRAQ:19970507 Re: SGI Advisory: webdist.cgi   |   CERT:CA-1997-12   |   URL:http://www.cert.org/advisories/CA-1997-12.html   |   AUSCERT:AA-97.14   |   SGI:19970501-02-PX   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19970501-02-PX   |   BID:374   |   URL:http://www.securityfocus.com/bid/374   |   OSVDB:235   |   URL:http://www.osvdb.org/235   |   XF:http-sgi-webdist(333)   |   URL:http://xforce.iss.net/xforce/xfdb/333",
+        "Phase": "",
+        "Description": "webdist CGI program (webdist.cgi) in SGI IRIX allows remote attackers to execute arbitrary commands via shell metacharacters in the distloc parameter."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0040",
+        "Comments": "",
+        "References": "CERT:CA-97.11.libXt   |   XF:libXt-bo",
+        "Phase": "",
+        "Description": "Buffer overflow in Xt library of X Windowing System allows local users to execute commands with root privileges."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0041",
+        "Comments": "",
+        "References": "CERT:CA-97.10.nls   |   XF:nls-bo",
+        "Phase": "",
+        "Description": "Buffer overflow in NLS (Natural Language Service)."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0042",
+        "Comments": "",
+        "References": "NAI:NAI-21   |   CERT:CA-97.09.imap_pop   |   XF:popimap-bo",
+        "Phase": "",
+        "Description": "Buffer overflow in University of Washington's implementation of IMAP and POP servers."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0043",
+        "Comments": "",
+        "References": "CERT:CA-97.08.innd   |   XF:inn-controlmsg",
+        "Phase": "",
+        "Description": "Command execution via shell metachars in INN daemon (innd) 1.5 using \"newgroup\" and \"rmgroup\" control messages, and others."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0044",
+        "Comments": "",
+        "References": "SGI:19970301-01-P   |   URL:ftp://patches.sgi.com/support/free/security/advisories/19970301-01-P   |   XF:sgi-fsdump",
+        "Phase": "",
+        "Description": "fsdump command in IRIX allows local users to obtain root access by modifying sensitive files."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0045",
+        "Comments": "",
+        "References": "CERT:CA-97.07.nph-test-cgi_script   |   XF:http-cgi-nph",
+        "Phase": "",
+        "Description": "List of arbitrary files on Web host via nph-test-cgi script."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0046",
+        "Comments": "",
+        "References": "CERT:CA-97.06.rlogin-term   |   XF:rlogin-termbo",
+        "Phase": "",
+        "Description": "Buffer overflow of rlogin program using TERM environmental variable."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0047",
+        "Comments": "",
+        "References": "CERT:CA-97.05.sendmail   |   BID:685   |   URL:http://www.securityfocus.com/bid/685   |   XF:sendmail-mime-bo2",
+        "Phase": "",
+        "Description": "MIME conversion buffer overflow in sendmail versions 8.8.3 and 8.8.4."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0048",
+        "Comments": "",
+        "References": "CERT:CA-97.04.talkd   |   FREEBSD:FreeBSD-SA-96:21   |   AUSCERT:AA-97.01   |   SUN:00147   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/147   |   XF:talkd-bo   |   XF:netkit-talkd",
+        "Phase": "",
+        "Description": "Talkd, when given corrupt DNS information, can be used to execute arbitrary commands with root privileges."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0049",
+        "Comments": "",
+        "References": "XF:sgi-csetup   |   CERT:CA-97.03.csetup",
+        "Phase": "",
+        "Description": "Csetup under IRIX allows arbitrary file creation or overwriting."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0050",
+        "Comments": "",
+        "References": "CERT:CA-97.02.hp_newgrp   |   AUSCERT:AA-96.16.HP-UX.newgrp.Buffer.Overrun.Vulnerability   |   XF:hp-newgrpbo",
+        "Phase": "",
+        "Description": "Buffer overflow in HP-UX newgrp program."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0051",
+        "Comments": "",
+        "References": "XF:sgi-licensemanager   |   CERT:CA-97.01.flex_lm   |   AUSCERT:AA-96.03",
+        "Phase": "",
+        "Description": "Arbitrary file creation and program execution using FLEXlm LicenseManager, from versions 4.0 to 5.0, in IRIX."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0052",
+        "Comments": "",
+        "References": "FREEBSD:FreeBSD-SA-98:08   |   OSVDB:908   |   URL:http://www.osvdb.org/908   |   XF:freebsd-ip-frag-dos(1389)   |   URL:http://xforce.iss.net/xforce/xfdb/1389",
+        "Phase": "",
+        "Description": "IP fragmentation denial of service in FreeBSD allows a remote attacker to cause a crash."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0053",
+        "Comments": "",
+        "References": "FREEBSD:FreeBSD-SA-98:07   |   OSVDB:6094   |   URL:http://www.osvdb.org/6094",
+        "Phase": "",
+        "Description": "TCP RST denial of service in FreeBSD."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0054",
+        "Comments": "",
+        "References": "SUN:00171   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/171   |   XF:sun-ftpd",
+        "Phase": "",
+        "Description": "Sun's ftpd daemon can be subjected to a denial of service."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0055",
+        "Comments": "",
+        "References": "SUN:00172   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/172   |   AIXAPAR:IX80543   |   URL:http://www-1.ibm.com/support/search.wss?rs=0&q=IX80543&apar=only   |   RSI:RSI.0005.05-14-98.SUN.LIBNSL   |   XF:sun-libnsl",
+        "Phase": "",
+        "Description": "Buffer overflows in Sun libnsl allow root access."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0056",
+        "Comments": "",
+        "References": "SUN:00174   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/174   |   XF:sun-ping",
+        "Phase": "",
+        "Description": "Buffer overflow in Sun's ping program can give root access to local users."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0057",
+        "Comments": "",
+        "References": "NAI:NAI-19   |   XF:vacation   |   HP:HPSBUX9811-087   |   URL:http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX9811-087",
+        "Phase": "",
+        "Description": "Vacation program allows command execution by remote users through a sendmail command."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0058",
+        "Comments": "",
+        "References": "NAI:NAI-12   |   BID:712   |   URL:http://www.securityfocus.com/bid/712   |   XF:http-cgi-phpbo",
+        "Phase": "",
+        "Description": "Buffer overflow in PHP cgi program, php.cgi allows shell access."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0059",
+        "Comments": "",
+        "References": "NAI:NAI-16   |   BID:353   |   URL:http://www.securityfocus.com/bid/353   |   OSVDB:164   |   URL:http://www.osvdb.org/164   |   XF:irix-fam(325)   |   URL:http://xforce.iss.net/xforce/xfdb/325",
+        "Phase": "",
+        "Description": "IRIX fam service allows an attacker to obtain a list of all files on the server."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0060",
+        "Comments": "",
+        "References": "NAI:NAI-26   |   XF:ascend-config-kill   |   ASCEND:http://www.ascend.com/2695.html",
+        "Phase": "",
+        "Description": "Attackers can cause a denial of service in Ascend MAX and Pipeline routers with a malformed packet to the discard port, which is used by the Java Configurator tool."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(3) Frech, Hill, Northcutt  |     RECAST(1) Baker  |     REVIEWING(1) Christey",
+        "Name": "CVE-1999-0061",
+        "Comments": " Christey> This should be split into three separate problems based on  |     the SNI advisory.  But there's newer information to further  |     complicate things.  |       |     What do we do about this one?  in 1997 or so, SNI did an  |     advisory on this problem.  In early 2000, it was still  |     discovered to be present in some Linux systems.  So an   |     SF-DISCOVERY content decision might say that this is a  |     long enough time between the two, so this should be recorded  |     separately.  But they're the same codebase... so if we keep  |     them in the same entry, how do we make sure that this entry  |     reflects that some new information has been discovered?  |       |     The use of dot notation may help in this regard, to use one  |     dot for the original problem as discovered in 1997, and  |     another dot for the resurgence of the problem in 2000.  |   Baker> We should merge these.  |   Christey> Perhaps this should be NAI-19 instead of NAI-20?  |     The original Bugtraq post for the SNI advisory suggests SNI-19:  |     BUGTRAQ:19971002 SNI-19:BSD lpd vulnerability  |     URL:SNI-19:BSD lpd vulnerability  |       |     Also add:  |     BUGTRAQ:19971021 SNI-19: BSD lpd vulnerabilities (UPDATE)  |     URL:http://marc.theaimsgroup.com/?l=bugtraq&m=87747479514310&w=2  |       |     However, archives of \"NAI-0020\" point to the lpd vuln.  |       |     If I recall correctly, some of the NAI advisory numbers got  |     switched when NAI acquired SNI.",
+        "References": "NAI:NAI-20   |   XF:bsd-lpd",
+        "Phase": "Proposed (19990630)",
+        "Description": "File creation and deletion, and remote execution, in the BSD line printer daemon (lpd)."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0062",
+        "Comments": "",
+        "References": "XF:openbsd-chpass   |   NAI:NAI-28   |   OSVDB:7559   |   URL:http://www.osvdb.org/7559",
+        "Phase": "",
+        "Description": "The chpass command in OpenBSD allows a local user to gain root access through file descriptor leakage."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0063",
+        "Comments": "",
+        "References": "AUSCERT:ESB-98.197   |   CISCO:http://www.cisco.com/warp/public/770/iossyslog-pub.shtml   |   XF:cisco-syslog-crash",
+        "Phase": "",
+        "Description": "Cisco IOS 12.0 and other versions can be crashed by malicious UDP packets to the syslog port."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0064",
+        "Comments": "",
+        "References": "BUGTRAQ:May28,1997   |   XF:lquerylv-bo",
+        "Phase": "",
+        "Description": "Buffer overflow in AIX lquerylv program gives root access to local users."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0065",
+        "Comments": "",
+        "References": "SUN:00181   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/181   |   XF:hp-dtmail",
+        "Phase": "",
+        "Description": "Multiple buffer overflows in how dtmail handles attachments allows a remote attacker to execute commands."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0066",
+        "Comments": "",
+        "References": "BUGTRAQ:19950731 SECURITY HOLE: \"AnyForm\" CGI   |   BID:719   |   URL:http://www.securityfocus.com/bid/719   |   XF:http-cgi-anyform",
+        "Phase": "",
+        "Description": "AnyForm CGI remote execution."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0067",
+        "Comments": "",
+        "References": "BUGTRAQ:19960923 PHF Attacks - Fun and games for the whole family   |   CERT:CA-1996-06   |   URL:http://www.cert.org/advisories/CA-1996-06.html   |   AUSCERT:AA-96.01   |   BID:629   |   URL:http://www.securityfocus.com/bid/629   |   OSVDB:136   |   URL:http://www.osvdb.org/136   |   XF:http-cgi-phf",
+        "Phase": "",
+        "Description": "phf CGI program allows remote command execution through shell metacharacters."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0068",
+        "Comments": "",
+        "References": "BUGTRAQ:19971019 Vulnerability in PHP Example Logging Scripts   |   XF:http-cgi-php-mylog   |   BID:713   |   URL:http://www.securityfocus.com/bid/713   |   OSVDB:3396   |   URL:http://www.osvdb.org/3396",
+        "Phase": "",
+        "Description": "CGI PHP mylog script allows an attacker to read any file on the target server."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0069",
+        "Comments": "",
+        "References": "SUN:00169   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/169   |   XF:sun-ufsrestore   |   OSVDB:8158   |   URL:http://www.osvdb.org/8158",
+        "Phase": "",
+        "Description": "Solaris ufsrestore buffer overflow."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0070",
+        "Comments": "",
+        "References": "XF:http-cgi-test",
+        "Phase": "",
+        "Description": "test-cgi program allows an attacker to list files on the server."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0071",
+        "Comments": "",
+        "References": "XF:http-apache-cookie   |   NAI:NAI-2",
+        "Phase": "",
+        "Description": "Apache httpd cookie buffer overflow for versions 1.1.1 and earlier."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0072",
+        "Comments": "",
+        "References": "ERS:ERS-SVA-E01-1997:004.1   |   XF:ibm-xdat",
+        "Phase": "",
+        "Description": "Buffer overflow in AIX xdat gives root access to local users."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0073",
+        "Comments": "",
+        "References": "CERT:CA-95:14.Telnetd_Environment_Vulnerability   |   XF:linkerbug",
+        "Phase": "",
+        "Description": "Telnet allows a remote client to specify environment variables including LD_LIBRARY_PATH, allowing an attacker to bypass the normal system libraries and gain root access."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0074",
+        "Comments": "",
+        "References": "XF:seqport",
+        "Phase": "",
+        "Description": "Listening TCP ports are sequentially allocated, allowing spoofing attacks."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0075",
+        "Comments": "",
+        "References": "BUGTRAQ:19961016 Re: ftpd bug? Was: bin/1805: Bug in ftpd   |   XF:ftp-pasvcore   |   OSVDB:5742   |   URL:http://www.osvdb.org/5742",
+        "Phase": "",
+        "Description": "PASV core dump in wu-ftpd daemon when attacker uses a QUOTE PASV command after specifying a username and password."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(3) Baker, Frech, Ozancin  |     NOOP(1) Balinsky  |     REVIEWING(1) Christey",
+        "Name": "CVE-1999-0076",
+        "Comments": " Balinsky> Don't know what this is.  Is this the LIST Core dump vulnerability?  |   Christey> Need to add more references and details.",
+        "References": "XF:ftp-args",
+        "Phase": "Modified (19990925-01)",
+        "Description": "Buffer overflow in wu-ftp from PASV command causes a core dump."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0077",
+        "Comments": "",
+        "References": "XF:tcp-seq-predict(139)   |   URL:http://xforce.iss.net/static/139.php",
+        "Phase": "",
+        "Description": "Predictable TCP sequence numbers allow spoofing."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(5) Collins, Frech, Landfield, Northcutt, Shostack  |     NOOP(1) Baker  |     RECAST(1) Christey",
+        "Name": "CVE-1999-0078",
+        "Comments": " Christey> This candidate should be SPLIT, since there are two separate  |     software flaws.  One is a symlink race and the other is a  |     shell metacharacter problem.  |   Christey> The permissions part of this vulnerability appears to  |     overlap with CVE-1999-0353  |   Christey> SGI:20020802-01-I",
+        "References": "CERT:CA-96.08.pcnfsd   |   XF:rpc-pcnfsd",
+        "Phase": "Modified (19990621-01)",
+        "Description": "pcnfsd (aka rpc.pcnfsd) allows local users to change file permissions, or execute arbitrary commands through arguments in the RPC call."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0079",
+        "Comments": "",
+        "References": "XF:ftp-pasv-dos   |   XF:ftp-pasvdos",
+        "Phase": "",
+        "Description": "Remote attackers can cause a denial of service in FTP by issuing multiple PASV commands, causing the server to run out of available ports."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0080",
+        "Comments": "",
+        "References": "BUGTRAQ:19950531 SECURITY: problem with some wu-ftpd-2.4 binaries (fwd)   |   CERT:CA-95:16.wu-ftpd.vul   |   XF:ftp-execdotdot",
+        "Phase": "",
+        "Description": "Certain configurations of wu-ftp FTP server 2.4 use a _PATH_EXECPATH setting to a directory with dangerous commands, such as /bin, which allows remote authenticated users to gain root access via the \"site exec\" command."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0081",
+        "Comments": "",
+        "References": "XF:ftp-rnfr",
+        "Phase": "",
+        "Description": "wu-ftp allows files to be overwritten via the rnfr command."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0082",
+        "Comments": "",
+        "References": "XF:ftp-cwd   |   FarmerVenema:Improving the Security of Your Site by Breaking Into it   |   URL:http://www.alw.nih.gov/Security/Docs/admin-guide-to-cracking.101.html",
+        "Phase": "",
+        "Description": "CWD ~root command in ftpd allows root access."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0083",
+        "Comments": "",
+        "References": "XF:cwdleak",
+        "Phase": "",
+        "Description": "getcwd() file descriptor leak in FTP."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0084",
+        "Comments": "",
+        "References": "XF:nfs-mknod(78)   |   URL:http://xforce.iss.net/xforce/xfdb/78",
+        "Phase": "",
+        "Description": "Certain NFS servers allow users to use mknod to gain privileges by creating a writable kmem device and setting the UID to 0."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0085",
+        "Comments": "",
+        "References": "BUGTRAQ:19960821 rwhod buffer overflow   |   XF:rwhod(119)   |   URL:http://xforce.iss.net/xforce/xfdb/119   |   XF:rwhod-vuln(118)   |   URL:http://xforce.iss.net/xforce/xfdb/118",
+        "Phase": "",
+        "Description": "Buffer overflow in rwhod on AIX and other operating systems allows remote attackers to execute arbitrary code via a UDP packet with a long hostname."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(2) Northcutt, Shostack  |     MODIFY(2) Frech, Prosser  |     NOOP(1) Baker  |     REJECT(1) Christey",
+        "Name": "CVE-1999-0086",
+        "Comments": " Frech> Reference: XF:ibm-routed  |   Prosser> This vulnerability allows debug mode to be turned on which is  |     the problem.  Should this be more specific in the description? This  |     one also affects SGI OSes, ref SGI Security Advisory 19981004-PX which  |     is in the SGI cluster, shouldn't these be cross-referenced as the same  |     vuln affects multiple OSes.  |   Christey> This appears to be subsumed by CVE-1999-0215",
+        "References": "ERS:ERS-SVA-E01-1998:001.1   |   XF:ibm-routed",
+        "Phase": "Interim (19990630)",
+        "Description": "AIX routed allows remote users to modify sensitive files."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0087",
+        "Comments": "",
+        "References": "XF:ibm-telnetdos   |   ERS:ERS-SVA-E01-1998:003.1   |   OSVDB:7992   |   URL:http://www.osvdb.org/7992",
+        "Phase": "",
+        "Description": "Denial of service in AIX telnet can freeze a system and prevent users from accessing the server."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(2) Northcutt, Shostack  |     MODIFY(2) Frech, Prosser  |     RECAST(1) Baker  |     REVIEWING(1) Christey",
+        "Name": "CVE-1999-0088",
+        "Comments": " Frech> ERS (and other references, BTW) explicitly stipulate 'local and  |     remote'.  |     Reference: XF:irix-autofsd  |   Prosser> Include the SGI Alert as well since it is mentioned in the  |     description.  |     SGI Security Advisory 19981005-01-PX  |   Christey> DUPE CVE-1999-0210?  |   Christey> ADDREF CIAC:J-014  |   Baker> It does look very similar to 1999-0210.  Perhaps they should be a single entry",
+        "References": "ERS:ERS-SVA-E01-1998:004.1   |   URL:http://www-1.ibm.com/services/brs/brspwhub.nsf/advisories/852567CC004F9038852566BF007B6393/$file/ERS-SVA-E01-1998_004_1.txt",
+        "Phase": "Proposed (19990617)",
+        "Description": "IRIX and AIX automountd services (autofsd) allow remote users to execute root commands."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(2) Northcutt, Shostack  |     MODIFY(2) Frech, Prosser  |     RECAST(1) Baker  |     REVIEWING(1) Christey",
+        "Name": "CVE-1999-0089",
+        "Comments": " Frech> Reference: XF:ibm-libDtSvc  |   Prosser> The overflow is in the dtaction utility.  Also affects  |     dtaction in the CDE on versions of SunOS (SUN 164). Probably should be  |     specific.  |   Christey> Same Codebase as CVE-1999-0121, so the two entries should be  |     merged.",
+        "References": "ERS:ERS-SVA-E01-1997:005.1   |   XF:ibm-libDtSvc",
+        "Phase": "Interim (19990630)",
+        "Description": "Buffer overflow in AIX libDtSvc library can allow local users to gain root access."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0090",
+        "Comments": "",
+        "References": "ERS:ERS-SVA-E01-1997:005.1   |   XF:ibm-rcp",
+        "Phase": "",
+        "Description": "Buffer overflow in AIX rcp command allows local users to obtain root access."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0091",
+        "Comments": "",
+        "References": "ERS:ERS-SVA-E01-1997:005.1   |   XF:ibm-writesrv",
+        "Phase": "",
+        "Description": "Buffer overflow in AIX writesrv command allows local users to obtain root access."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   ACCEPT(2) Baker, Bollinger  |     MODIFY(1) Frech  |     NOOP(1) Ozancin",
+        "Name": "CVE-1999-0092",
+        "Comments": " Frech> XF:ibm-portmir",
+        "References": "ERS:ERS-SVA-E01-1997:006.1",
+        "Phase": "Proposed (19990623)",
+        "Description": "Various vulnerabilities in the AIX portmir command allows local users to obtain root access."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0093",
+        "Comments": "",
+        "References": "ERS:ERS-SVA-E01-1997:008.1   |   XF:ibm-nslookup",
+        "Phase": "",
+        "Description": "AIX nslookup command allows local users to obtain root access by not dropping privileges correctly."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0094",
+        "Comments": "",
+        "References": "ERS:ERS-SVA-E01-1997:007.1   |   XF:ibm-piodmgrsu",
+        "Phase": "",
+        "Description": "AIX piodmgrsu command allows local users to gain additional group privileges."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0095",
+        "Comments": "",
+        "References": "CERT:CA-88.01   |   CERT:CA-93.14   |   BID:1   |   URL:http://www.securityfocus.com/bid/1   |   OSVDB:195   |   URL:http://www.osvdb.org/195   |   XF:smtp-debug",
+        "Phase": "",
+        "Description": "The debug command in Sendmail is enabled, allowing attackers to execute commands as root."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0096",
+        "Comments": "",
+        "References": "CERT:CA-93.16   |   CERT:CA-95.05   |   CIAC:A-13   |   CIAC:A-14   |   SUN:00122   |   URL:http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/122&type=0&nav=sec.sba   |   XF:smtp-dcod",
+        "Phase": "",
+        "Description": "Sendmail decode alias can be used to overwrite sensitive files."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0097",
+        "Comments": "",
+        "References": "ERS:ERS-SVA-E01-1997:009.1   |   XF:ibm-ftp",
+        "Phase": "",
+        "Description": "The AIX FTP client can be forced to execute commands from a malicious server through shell metacharacters (e.g. a pipe character)."
+    },
+    {
+        "Status": "Candidate",
+        "Votes": "   MODIFY(2) Baker, Frech  |     NOOP(1) Wall  |     REVIEWING(1) Christey",
+        "Name": "CVE-1999-0098",
+        "Comments": " Frech> (Accept XF reference.)  |     Our references do not mention hiding activities. This issue can crash the  |     SMTP server or execute arbitrary byte-code. Is there another reference  |     available?  |   Christey> Should this be merged with CVE-1999-0284, which is Sendmail  |     with SMTP HELO?  |   Christey> BUGTRAQ:19980522 about sendmail 8.8.8 HELO hole  |     http://marc.theaimsgroup.com/?l=bugtraq&m=90221101925991&w=2  |     BUGTRAQ:19980527 about sendmail 8.8.8 HELO hole  |     http://marc.theaimsgroup.com/?l=bugtraq&m=90221101926003&w=2  |   Baker> Apparently this XF reference is not for this issue, but for the other issue.  This should be modified to have the Bugtraq references, and remove the XF reference.",
+        "References": "XF:smtp-helo-bo",
+        "Phase": "Proposed (19990726)",
+        "Description": "Buffer overflow in SMTP HELO command in Sendmail allows a remote attacker to hide activities."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0099",
+        "Comments": "",
+        "References": "CERT:CA-95.13.syslog.vul   |   XF:smtp-syslog",
+        "Phase": "",
+        "Description": "Buffer overflow in syslog utility allows local or remote attackers to gain root privileges."
+    },
+    {
+        "Status": "Entry",
+        "Votes": "",
+        "Name": "CVE-1999-0100",
+        "Comments": "",
+        "References": "ERS:ERS-SVA-E01-1997:002.1   |   XF:inn-controlmsg",
+        "Phase": "",
+        "Description": "Remote access in AIX innd 1.5.1, using control messages."
+    }
+]

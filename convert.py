@@ -1,19 +1,27 @@
-import csvkit
+import csv
 import json
+import tempfile
 
+tf = tempfile.TemporaryFile(mode='w+b')
 
-#data = []
 f = open('allitems100.csv',"r")
-#data = f.readlines()
-f = [d.replace('|','","') for d in f]
-header = []
-header = f[0]
-print header, f
-#del f[0]
-#print header
-#print "\n"
-#out = json.dumps(zip(header,data))
-#print out
-reader = csvkit.DictReader(f)
+#lines = open('allitems100.csv',"r").read()
+
+#for l in lines:
+#	rec = [d.replace('|','","') for d in l]
+#	tf.write(''.join(rec))
+
+
+#tf.seek(0)
+
+#for a in tf.readlines():
+#	print a
+
+#tf.seek(0)
+
+#f = open(ntf,'r')
+reader = csv.DictReader(f)
 out = json.dumps([row for row in reader], indent=4, separators=(',', ': '))
 print out
+
+tf.close()
