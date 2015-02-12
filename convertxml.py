@@ -9,33 +9,11 @@ def convert(xml_file, xml_attribs=True):
         #return json.dumps(d, indent=4)
         return d
 
-def getFromDict(dataDict, mapList):
-    return reduce(lambda d, k: d[k], mapList, dataDict)
+files = ["./data/nvdcve-2.0-2002.xml", "./data/nvdcve-2.0-2003.xml", "./data/nvdcve-2.0-2004.xml", "./data/nvdcve-2.0-2005.xml", "./data/nvdcve-2.0-2006.xml", "./data/nvdcve-2.0-2007.xml", "./data/nvdcve-2.0-2008.xml", "./data/nvdcve-2.0-2009.xml", "./data/nvdcve-2.0-2010.xml", "./data/nvdcve-2.0-2011.xml", "./data/nvdcve-2.0-2012.xml", "./data/nvdcve-2.0-2013.xml", "./data/nvdcve-2.0-2014.xml", "./data/nvdcve-2.0-2015.xml"]
 
-def extract(dict_in, dict_out):
-    for key, value in dict_in.iteritems():
-        if isinstance(value, dict): # If value itself is dictionary
-            extract(value, dict_out)
-        elif isinstance(value, unicode):
-            # Write to dict_out
-            dict_out[key] = value
-    return dict_out
+for f in files:
+	doc = convert(f)
+	for i, entry in enumerate(d['nvd']['entry'] for d in doc): 
+		for j, cve in enumerate(c for c in entry):
+    			print json.dumps(cve)
 
-doc = convert("nvdcve-2.0-2015.xml")
-
-nvd= doc["nvd"]
-
-print json.dumps(nvd, indent = 4)
-
-#myKeys = ['entry','id','vuln:vulnerable-software-list']
-
-#for d in doc.values():
-#	print d['nvd']
-
-#print json.dumps(dict([(i, doc[i]) for i in myKeys if i in doc]), indent=4)
-
-
-#print getFromDict(doc, ['nvd','entry','id','vuln:vulnerable-software-list'])
-
-
-#print  {e: doc[e] for e in (u'@id',u'vuln:vulnerable-software-list')}
