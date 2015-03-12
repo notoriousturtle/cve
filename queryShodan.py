@@ -1,6 +1,6 @@
 import json
 import shodan
-#import requests
+import requests
 import mechanize as mechanize
 import cookielib
 
@@ -41,21 +41,33 @@ def make_browser():
         return br
 
 
+
 # Wrap the request in a try/ except block to catch errors
 try:
-        brwsr = make_browser()
-        brwsr.add_password(shodan_url, 'spara', 'P3pit0iloveyou')
+        #brwsr = make_browser()
+        #brwsr.add_password(shodan_url, 'spara', 'P3pit0iloveyou')
         # Search Shodan
         #results = api.search('wms')
         #https://api.shodan.io/shodan/host/search?key={YOUR_API_KEY}&query={query}&facets={facets}
-        #payload = {'query' : 'country:CN', 'key' : SHODAN_API_KEY }
-        #results = requests.get(shodan_url,params=payload)
-        print ''.join([shodan_url,'?key=',SHODAN_API_KEY,'&query=country:CN'])
-        results = brwsr.open(''.join([shodan_url,'&query=country:CN']))
+        payload = {'query' : 'China', 'key' : SHODAN_API_KEY }
+        results = requests.get(shodan_url,params=payload)
+        #print ''.join([shodan_url,'?key=',SHODAN_API_KEY,'&query=country:CN'])
+        #results = brwsr.open(''.join([shodan_url,'&query=country:CN']))
         #print results.url
 
         # Show the results
-        print brwsr.response().read()
+        #print brwsr.response().read()
+        r = results.json()
+        print json.dumps(r)
+        
+
+        m = r.get('matches') 
+        for i, data in enumerate(d['data'] for d in m): 
+                print data
+        #        for info in m:
+        #                print info
+
+
         #print 'Results found: %s' % results['total']
         #for result in results['matches']:
         #        print 'IP: %s' % result['ip_str']
