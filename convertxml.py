@@ -3,6 +3,7 @@ import xmltodict
 import urllib
 import sys
 import os.path
+import shutil
 
 def convert(xml_file, xml_attribs=False):
     with open(xml_file, "rb") as f:    # notice the "rb" mode
@@ -19,12 +20,6 @@ def download(files, base_url):
 def deletexml(files):
 	for f in files:
 		os.remove(f)
-
-def showkeys(data):
-	k = []
-	for key in data.keys():
-		k.append(key)
-	print k
 
 def flatten(data):
 	#remove extra characters / prefixes
@@ -113,30 +108,32 @@ files = [
 		"nvdcve-2.0-2014.xml", 
 		"nvdcve-2.0-2015.xml"
 		]
-#files = ["nvdcve-2.0-2002.xml"]
 modified = ["nvdcve-2.0-Modified.xml"]
-
 base_url = "https://nvd.nist.gov/feeds/xml/cve/"
-
-outfile = open('nvdall.json','a')
 
 if str(sys.argv[1]) == 'download':
 	download(files, base_url)
+elif str(sys.argv[1]) == 'delete':
+	files += modified
+	deletexml(files)
 elif str(sys.argv[1]) == 'convert':
+	outfile = open('current.json','w')
 	for f in files:
 		doc = convert(f)
 		for i, entry in enumerate(d['nvd']['entry'] for d in doc): 
 			for j, cve in enumerate(c for c in entry):
     				outfile.write("%s\n" % json.dumps(flatten(cve)))
+	outfile.close()    				
 elif str(sys.argv[1]) == 'update':
 	if os.path.exists('nvdall.json'):
+		outfile = open('nvdall.json','a')
 		download(modified, base_url)
 		doc = convert(modified[0])
 		for i, entry in enumerate(d['nvd']['entry'] for d in doc): 
 				for j, cve in enumerate(c for c in entry):
-						print json.dumps(flatten(cve))
-    						outfile.write("%s\n" % json.dumps(flatten(cve)))
+    					outfile.write("%s\n" % json.dumps(flatten(cve)))
 else:
-	print "usage: convertxml.py [download, convert, update]"
+	print "usage: convertxml.py [download, delete, convert, update]"
 
-outfile.close()
+if os.path.exists('current.json') and str(sys.argv[1]) == 'convert':
+	shutil.copyfile('current.json', 'nvdall.json')
