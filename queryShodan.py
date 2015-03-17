@@ -5,7 +5,7 @@ import mechanize as mechanize
 import cookielib
 import sys
 
-SHODAN_API_KEY = "xQlm3r5bW6GVBnAFRDYydLASeWjjpo2T"
+SHODAN_API_KEY = "shodan_key"
 api = shodan.Shodan(SHODAN_API_KEY)
 shodan_url ="https://api.shodan.io/shodan/host/search"
 
