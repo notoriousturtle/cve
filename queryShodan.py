@@ -1,8 +1,6 @@
 import json
 import shodan
 import requests
-import mechanize as mechanize
-import cookielib
 import sys
 
 SHODAN_API_KEY = "shodan_key"
